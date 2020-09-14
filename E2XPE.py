@@ -1,5 +1,4 @@
 import os
-import sys
 try:
     import requests
 except ImportError:
@@ -8,11 +7,19 @@ except ImportError:
     print('Ejecuta de nuevo tu script...')
     exit()
 try:
-    import BeautifulSoup
+    from bs4 import BeautifulSoup as bs
 except ImportError:
     os.system("pip install bs4")
     print("Installing bs4...")
     print('Ejecuta de nuevo tu script...')
+    exit()
+try:
+    import sys
+except ImportError:
+    os.system("pip install sys")
+    print("Installing sys...")
+    print('Ejecuta de nuevo tu script...')
+    exit()
 try:
     import webbrowser
 except ImportError:
@@ -20,7 +27,6 @@ except ImportError:
     print("Inatlling webbrowser...")
     print('Ejecuta de nuevo tu script...')
     exit()
-from bs4 import BeautifulSoup as bs
     
 # Ximena Pérez Escamilla #1898135
 # Lo que hace este script es buscar entre la pagina de noticias de la uanl
